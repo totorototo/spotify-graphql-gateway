@@ -1,0 +1,43 @@
+{
+  "name": "spotify-graphql-gateway",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-datasource-rest": "^0.1.5",
+    "apollo-server": "2.1.0",
+    "apollo-server-express": "^2.1.0",
+    "connect": "^3.6.6",
+    "express": "^4.16.4",
+    "graphql": "14.0.2",
+    "graphql-subscriptions": "latest",
+    "http": "^0.0.0",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@types/graphql": "14.0.1",
+    "@babel/cli": "^7.0.0-beta.49",
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/node": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "@babel/register": "^7.0.0-beta.49",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.49",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.49",
+    "@babel/runtime": "^7.0.0-beta.49",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.17.5",
+    "rimraf": "^2.6.2"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development nodemon src/app.js --exec babel-node",
+    "serve": "NODE_ENV=production node dist/app.js",
+    "clean": "rimraf dist/*",
+    "build": "npm run clean && babel src -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint -c .eslintrc src"
+  }
+}
