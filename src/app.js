@@ -16,13 +16,13 @@ const server = new ApolloServer({
   dataSources: () => ({ spotifyAPI: new SpotifyAPI() }),
   context: async ({ req, connection }) => {
     if (connection) {
-      // check connection for metadata
       const { authorization } = connection.context;
+      if (!authorization) throw new Error("you must be authorize");
+
       return { authorization };
     }
     const { authorization } = req.headers;
-
-    if (!authorization) throw new AuthorizationError("you must be authorize");
+    if (!authorization) throw new Error("you must be authorize");
 
     return {
       authorization
