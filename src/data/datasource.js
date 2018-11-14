@@ -94,7 +94,7 @@ export default class SpotifyAPI extends RESTDataSource {
   }
 
   async search(queryParam, typeParam) {
-    const result = await this.get(`search/?q=${queryParam}&type=${typeParam}`);
+    const result = await this.get(`search?q=${queryParam}&type=${typeParam}`);
     return Object.values(result).reduce(
       (acc, types) => [...acc, ...types.items],
       []
