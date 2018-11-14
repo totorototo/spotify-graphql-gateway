@@ -17,12 +17,12 @@ const server = new ApolloServer({
   context: async ({ req, connection }) => {
     if (connection) {
       const { authorization } = connection.context;
-      if (!authorization) throw new Error("you must be authorize");
+      // if (!authorization) throw new Error("you must be authorize");
 
       return { authorization };
     }
     const { authorization } = req.headers;
-    if (!authorization) throw new Error("you must be authorize");
+    // if (!authorization) throw new Error("you must be authorize");
 
     return {
       authorization

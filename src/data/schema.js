@@ -20,7 +20,6 @@ const typeDefs = gql`
     images: [Image]!
     label: String
     name: String!
-    popularity: Int!
     release_date_precision: String!
     release_date: String!
     uri: String!
@@ -437,7 +436,7 @@ const typeDefs = gql`
     getTrackAudioAnalysis(id: String!): AudioAnalysis!
     getTrackAudioFeatures(id: String!): AudioFeature!
     getTracksAudioFeatures(ids: String!): [AudioFeature]!
-    search(queryParam: String!, typeParam: String!): [Result]!
+    search(queryParam: String!, typeParam: String!): [Result]
     getRecommendations(
       seedTracks: String!
       seedArtisits: String!
